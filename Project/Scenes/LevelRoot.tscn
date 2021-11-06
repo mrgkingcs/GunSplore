@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Ship01.png" type="Texture" id=1]
+
+[sub_resource type="PhysicsMaterial" id=3]
+bounce = 0.4
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 240 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 283.605 )
+
+[node name="LevelRoot" type="Node2D"]
+
+[node name="PlayerRoot" type="RigidBody2D" parent="."]
+position = Vector2( 128, 128 )
+physics_material_override = SubResource( 3 )
+linear_damp = 1.0
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerRoot"]
+polygon = PoolVector2Array( -11, 0, -5, -13.5, 5, -13.5, 11, 0, 9, 11, 4.5, 11, 3, 4.893, -3, 4.893, -4.5, 11, -9, 11 )
+
+[node name="Sprite" type="Sprite" parent="PlayerRoot"]
+texture = ExtResource( 1 )
+
+[node name="GunLeft" type="Node2D" parent="PlayerRoot"]
+position = Vector2( -6.75, 10.859 )
+
+[node name="GunRight" type="Node2D" parent="PlayerRoot"]
+position = Vector2( 6.75, 10.859 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+margin_right = 40.0
+margin_bottom = 483.0
+rect_pivot_offset = Vector2( 32.2996, 483 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 20.1587, 240.015 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 599.722, 1.88988 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+margin_right = 40.0
+margin_bottom = 483.0
+rect_pivot_offset = Vector2( 32.2996, 483 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 20.1587, 240.015 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 556.885, 0 )
+rotation = 1.5708
+scale = Vector2( 1.25, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+margin_top = -43.0
+margin_right = 40.0
+margin_bottom = 520.0
+rect_pivot_offset = Vector2( 32.2996, 483 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 20.1587, 240.015 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 556.885, 440 )
+rotation = 1.5708
+scale = Vector2( 1.25, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4"]
+margin_top = -43.0
+margin_right = 40.0
+margin_bottom = 520.0
+rect_pivot_offset = Vector2( 32.2996, 483 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 20.1587, 240.015 )
+shape = SubResource( 2 )
