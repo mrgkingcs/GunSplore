@@ -4,19 +4,15 @@
 [ext_resource path="res://Scenes/PlayerRoot.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Bullet01.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/PlyrBullet.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/TerrainSections/Base-U.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/CameraController.gd" type="Script" id=6]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 3.5
 
-[sub_resource type="PhysicsMaterial" id=1]
+[sub_resource type="PhysicsMaterial" id=2]
 friction = 0.1
 bounce = 0.4
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20, 240 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20, 283.605 )
 
 [node name="LevelRoot" type="Node2D"]
 
@@ -30,12 +26,12 @@ script = ExtResource( 4 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlyrBulletTemplate"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="PlayerRoot" type="RigidBody2D" parent="."]
 position = Vector2( 128, 128 )
 collision_mask = 4
-physics_material_override = SubResource( 1 )
+physics_material_override = SubResource( 2 )
 linear_damp = 1.0
 angular_damp = 1.5
 script = ExtResource( 2 )
@@ -56,75 +52,13 @@ rotation = 3.14159
 
 [node name="Cave" type="Node2D" parent="."]
 
-[node name="TempWallLeft" type="StaticBody2D" parent="Cave"]
-collision_layer = 4
-collision_mask = 3
+[node name="Base-U" parent="Cave" instance=ExtResource( 5 )]
+position = Vector2( 0, 512 )
 
-[node name="ColorRect" type="ColorRect" parent="Cave/TempWallLeft"]
-margin_right = 40.0
-margin_bottom = 483.0
-rect_pivot_offset = Vector2( 32.2996, 483 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Base-U2" parent="Cave" instance=ExtResource( 5 )]
+position = Vector2( 512, 512 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave/TempWallLeft"]
-position = Vector2( 20.1587, 240.015 )
-shape = SubResource( 2 )
-
-[node name="TempWallRight" type="StaticBody2D" parent="Cave"]
-position = Vector2( 599.722, 1.88988 )
-collision_layer = 4
-collision_mask = 3
-
-[node name="ColorRect" type="ColorRect" parent="Cave/TempWallRight"]
-margin_right = 40.0
-margin_bottom = 483.0
-rect_pivot_offset = Vector2( 32.2996, 483 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave/TempWallRight"]
-position = Vector2( 20.1587, 240.015 )
-shape = SubResource( 2 )
-
-[node name="TempWallTop" type="StaticBody2D" parent="Cave"]
-position = Vector2( 556.885, 0 )
-rotation = 1.5708
-scale = Vector2( 1.25, 1 )
-collision_layer = 4
-collision_mask = 3
-
-[node name="ColorRect" type="ColorRect" parent="Cave/TempWallTop"]
-margin_top = -43.0
-margin_right = 40.0
-margin_bottom = 520.0
-rect_pivot_offset = Vector2( 32.2996, 483 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave/TempWallTop"]
-position = Vector2( 20.1587, 240.015 )
-shape = SubResource( 3 )
-
-[node name="TempWallBottom" type="StaticBody2D" parent="Cave"]
-position = Vector2( 556.885, 440 )
-rotation = 1.5708
-scale = Vector2( 1.25, 1 )
-collision_layer = 4
-collision_mask = 3
-
-[node name="ColorRect" type="ColorRect" parent="Cave/TempWallBottom"]
-margin_top = -43.0
-margin_right = 40.0
-margin_bottom = 520.0
-rect_pivot_offset = Vector2( 32.2996, 483 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave/TempWallBottom"]
-position = Vector2( 20.1587, 240.015 )
-shape = SubResource( 3 )
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 6 )

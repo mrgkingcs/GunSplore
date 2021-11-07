@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-U-Section.png" type="Texture" id=1]
+
+[node name="Base-U" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 29.732, 0, 21.2418, 20.0677, 26.2362, 25.8112, 22.2407, 45.0395, 31.4802, 70.261, 22.4904, 93.7345, 24.9876, 128.695, 15.748, 142.929, 29.4825, 157.163, 30.2317, 174.144, 26.9853, 201.613, 32.2294, 213.349, 38.7221, 211.601, 54.4543, 222.339, 58.9492, 214.598, 64.9424, 222.839, 87.9165, 223.837, 98.4046, 215.097, 137.361, 218.843, 137.86, 218.593, 150.346, 224.337, 167.826, 219.842, 181.81, 226.584, 199.041, 218.094, 226.51, 216.845, 231.255, 205.358, 241.743, 195.627, 238.996, 183.633, 242.991, 169.149, 232.503, 150.42, 231.754, 110.715, 241.743, 100.976, 238.247, 64.0181, 225.761, 22.3152, 217.021, 17.0711, 216.771, 7.3321, 222.015, 0, 255.727, 0, 256, 256, 0, 256, 0, 0 )
