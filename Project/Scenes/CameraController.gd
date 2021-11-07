@@ -14,7 +14,9 @@ func _ready():
 	var offset = get_viewport_rect().size/2
 	global_position = playerNode.global_position - offset
 	
-	targetPosArray = [ global_position, global_position, global_position, global_position, global_position ] 
+	targetPosArray = []
+	for count in range(0,16):
+		targetPosArray.append(global_position)
 	currPosIndex = 0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
