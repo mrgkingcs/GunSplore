@@ -34,15 +34,3 @@ func _process(delta):
 	meanTargetPos *= 1.0/len(targetPosArray)
 
 	global_position = lerp(global_position, meanTargetPos, 0.75)
-	#global_position = meanTargetPos
-#	var movementNeeded = targetPos - global_position
-#	if movementNeeded.length() > 2:
-#		speed = lerp(speed, movementNeeded.length(), 0.5)
-#		if speed > MAX_SPEED:
-#			speed = MAX_SPEED
-#		movementNeeded = movementNeeded.normalized()*speed
-#	else:
-#		speed = 0
-#		movementNeeded = Vector2(0,0)
-#
-#	global_position += movementNeeded
