@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Base-Right-Wall.png-d403bc159719ecd3df3b2f44f3b819b6.stex"
+path="res://.import/CaveBackground.png-40da56258c2e04cd1ccb22603ea81ecc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Base-Right-Wall.png"
-dest_files=[ "res://.import/Base-Right-Wall.png-d403bc159719ecd3df3b2f44f3b819b6.stex" ]
+source_file="res://Sprites/CaveBackground.png"
+dest_files=[ "res://.import/CaveBackground.png-40da56258c2e04cd1ccb22603ea81ecc.stex" ]
 
 [params]
 

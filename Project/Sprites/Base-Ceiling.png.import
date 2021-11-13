@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Base-Right-Wall.png-d403bc159719ecd3df3b2f44f3b819b6.stex"
+path="res://.import/Base-Ceiling.png-f16ba7e89ea30aff08f7c8df869bcadd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Base-Right-Wall.png"
-dest_files=[ "res://.import/Base-Right-Wall.png-d403bc159719ecd3df3b2f44f3b819b6.stex" ]
+source_file="res://Sprites/Base-Ceiling.png"
+dest_files=[ "res://.import/Base-Ceiling.png-f16ba7e89ea30aff08f7c8df869bcadd.stex" ]
 
 [params]
 

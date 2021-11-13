@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-Top-Left-IntCorner.png" type="Texture" id=1]
+
+[node name="Base-Top-Left-Corner" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 256, 0, 256, 29.333, 250.667, 30.6667, 236.333, 24.6667, 221, 43.3333, 214.667, 35.6667, 206, 42.3333, 174.667, 15.3333, 162, 35.6667, 136.667, 22, 122.667, 21.3333, 118.333, 33.3333, 107.333, 39, 90.6667, 35.6667, 82.3333, 28.6667, 67, 37, 50.3333, 28.6667, 26, 27.6667, 21.3333, 43.3333, 32.3333, 69.6667, 22.3333, 95.6667, 26, 126.667, 15, 142.333, 31, 156.667, 30.6667, 174.333, 27, 183.667, 27.3333, 200, 23.3333, 222.333, 29, 227.667, 28.667, 256, 0, 256, 0, 0 )

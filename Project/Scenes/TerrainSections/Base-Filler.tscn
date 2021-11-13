@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/BaseRockBackground.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 128 )
+
+[node name="Base-BottomLeftExt" type="Node2D"]
+
+[node name="BottomLeftCorner" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="BottomLeftCorner"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="BottomLeftCorner"]
+position = Vector2( 128, 128 )
+shape = SubResource( 1 )

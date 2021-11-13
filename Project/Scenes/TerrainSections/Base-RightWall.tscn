@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-Right-Wall.png" type="Texture" id=1]
+
+[node name="Base-RightWall" type="Node2D"]
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2( 208, 0 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="RightWall"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightWall"]
+polygon = PoolVector2Array( 8.55684, 7.47976, 13.896, 0, 48, 0, 48, 256, 12.609, 256, 25.6906, 235.967, 21.8015, 222.886, 25.6906, 217.936, 24.6299, 206.976, 35.5901, 198.137, 35.5901, 169.499, 22.8622, 150.407, 23.2157, 112.224, 32.8664, 101.495, 30.7082, 60.6383, 16.1162, 20.7374, 7.69771, 16.2475 )

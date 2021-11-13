@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-Ceiling.png" type="Texture" id=1]
+
+[node name="Base-Ceiling" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 256, 0, 256, 29.333, 250, 31, 235.667, 25.6667, 222.667, 43, 213.333, 37, 205.667, 43.3333, 175.333, 15.3333, 162.667, 37, 156.667, 37, 137.333, 21.6667, 122.667, 21.6667, 118.667, 33.3333, 107, 39.3333, 91, 36, 81.3333, 27.6667, 64.3333, 37.3333, 49, 28, 38.6667, 30.6667, 21, 24.3333, 14.3333, 28.6667, 0, 28.667, 0, 0 )

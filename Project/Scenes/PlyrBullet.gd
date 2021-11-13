@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const BASE_SPEED = 250
+const BASE_SPEED = 350
 const BASE_VEL = Vector2.UP * BASE_SPEED
 var vel
 var fired = false
