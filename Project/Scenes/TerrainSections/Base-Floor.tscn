@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-Floor.png" type="Texture" id=1]
+
+[node name="Base-Floor" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 208 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 17.169, 6.21547, 13.9979, 14.1425, 13.2001, 27.2385, 23.5182, 43.9062, 18.3591, 53.0338, 24.3119, 63.3519, 19.5497, 66.9235, 8.83473, 91.9251, 3.67569, 99.8621, 11.2158, 102.243, 7.64418, 114.546, 17.5654, 126.054, 7.64418, 141.531, 20.7403, 150.147, 12.8741, 159.137, 22.2386, 174.494, 6.13177, 187.23, 8.37923, 196.969, 21.4894, 215.323, 11.3758, 225.062, 11.3758, 233.246, 18.4928, 238.865, 13.9979, 248.978, 23.7369, 256, 20.366, 255.721, 48, 0, 48.834 )

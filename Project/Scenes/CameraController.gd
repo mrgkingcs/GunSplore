@@ -15,7 +15,7 @@ func _ready():
 	global_position = playerNode.global_position - offset
 	
 	targetPosArray = []
-	for count in range(0,16):
+	for count in range(0,32):
 		targetPosArray.append(global_position)
 	currPosIndex = 0
 	
