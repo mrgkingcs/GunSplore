@@ -4,7 +4,7 @@ const MAX_SPEED = 5
 
 var playerNode = null
 
-var targetPosArray
+var velocityArray
 var currPosIndex
 
 # Called when the node enters the scene tree for the first time.
@@ -14,9 +14,9 @@ func _ready():
 	var offset = get_viewport_rect().size/2
 	global_position = playerNode.global_position - offset
 	
-	targetPosArray = []
-	for count in range(0,32):
-		targetPosArray.append(global_position)
+	velocityArray = []
+	for _count in range(0,32):
+		velocityArray.append(Vector2())
 	currPosIndex = 0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,12 +27,14 @@ func _process(delta):
 					+ playerNode.linear_velocity
 					- offset
 				)
-	targetPosArray[currPosIndex] = targetPos
-	currPosIndex = (currPosIndex+1) % len(targetPosArray)
+	velocityArray[currPosIndex] = playerNode.linear_velocity*0.75
+	currPosIndex = (currPosIndex+1) % len(velocityArray)
 	
-	var meanTargetPos = Vector2(0,0)
-	for entry in targetPosArray:
-		meanTargetPos += entry
-	meanTargetPos *= 1.0/len(targetPosArray)
+	var meanVelocity = Vector2(0,0)
+	for entry in velocityArray:
+		meanVelocity += entry
+	meanVelocity *= 1.0/len(velocityArray)
+	
+	var meanTargetPos = meanVelocity + playerNode.global_position - offset
 
-	global_position = lerp(global_position, meanTargetPos, 0.75)
+	global_position = lerp(global_position, meanTargetPos, 0.5*50*delta)
