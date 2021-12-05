@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/BigExplosion.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/ExplosionBig.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="ExplosionBig" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource( 1 )
+z_index = 1
+emitting = false
+amount = 4
+lifetime = 0.35
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2( 0, 0 )
+anim_speed = 1.0
+script = ExtResource( 1 )
