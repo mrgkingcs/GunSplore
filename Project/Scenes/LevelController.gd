@@ -8,15 +8,21 @@ extends Node2D
 var smallExplosion = preload("res://Scenes/ExplosionSmall.tscn")
 var bigExplosion = preload("res://Scenes/ExplosionBig.tscn")
 
+var enemyContainer = null
+var numEnemies = -1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	enemyContainer = get_node("../EnemyContainer")
+	numEnemies = enemyContainer.get_child_count()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(delta):
+	var newNumEnemies = enemyContainer.get_child_count()
+	if numEnemies != newNumEnemies:
+		numEnemies = newNumEnemies
+		if numEnemies == 0:
+			get_node("/root/LevelRoot/Cave/FinishLandingPad").setColourFrame(1)
 
 func spawnSmallExplosion(position):
 	var explosion = smallExplosion.instance()
