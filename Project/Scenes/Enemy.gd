@@ -21,5 +21,6 @@ func _process(delta):
 			queue_free()
 			
 func takeDamage(damage):
-	levelController.spawnBigExplosion(get_global_transform().get_origin())
-	deathTimer = DEATH_DELAY
+	if deathTimer <= 0:
+		levelController.spawnBigExplosion(get_global_transform().get_origin())
+		deathTimer = DEATH_DELAY
