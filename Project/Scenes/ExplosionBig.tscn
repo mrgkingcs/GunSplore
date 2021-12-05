@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/BigExplosion.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/ExplosionBig.png" type="Texture" id=2]
+[ext_resource path="res://Sound/explosion.wav" type="AudioStream" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -25,3 +26,7 @@ emission_sphere_radius = 16.0
 gravity = Vector2( 0, 0 )
 anim_speed = 1.0
 script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

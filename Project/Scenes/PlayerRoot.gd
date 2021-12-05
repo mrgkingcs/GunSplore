@@ -41,6 +41,8 @@ func fire_left_gun():
 	bulletInstance.transform = Transform2D($GunLeft.global_transform)
 	bulletInstance.fire(linear_velocity)
 	
+	$FirePlayer.play()
+	
 	apply_impulse(transform.basis_xform($GunLeft.position), transform.basis_xform(BASE_GUN_IMPULSE))
 
 func fire_right_gun():
@@ -48,5 +50,7 @@ func fire_right_gun():
 	get_owner().add_child(bulletInstance)
 	bulletInstance.transform = Transform2D($GunRight.global_transform)
 	bulletInstance.fire(linear_velocity)
+	
+	$FirePlayer.play()
 	
 	apply_impulse(transform.basis_xform($GunRight.position), transform.basis_xform(BASE_GUN_IMPULSE))

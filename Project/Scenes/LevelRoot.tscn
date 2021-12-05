@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Sprites/Ship01.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerRoot.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/LevelController.gd" type="Script" id=20]
 [ext_resource path="res://Sound/so-long-syndrome.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Sound/fire.wav" type="AudioStream" id=22]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.5
@@ -143,6 +144,9 @@ rotation = 3.14159
 [node name="GunRight" type="Node2D" parent="PlayerRoot"]
 position = Vector2( 6.75, 12 )
 rotation = 3.14159
+
+[node name="FirePlayer" type="AudioStreamPlayer2D" parent="PlayerRoot"]
+stream = ExtResource( 22 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
