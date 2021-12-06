@@ -111,9 +111,6 @@ position = Vector2( 256, -512 )
 [node name="Base-Filler" parent="Cave" instance=ExtResource( 17 )]
 position = Vector2( 256, 0 )
 
-[node name="Base-BottomLeftExt3" parent="Cave" instance=ExtResource( 17 )]
-position = Vector2( 768, 256 )
-
 [node name="Base-Bottom-Left-Corner" parent="Cave" instance=ExtResource( 23 )]
 position = Vector2( 512, 0 )
 
