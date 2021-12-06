@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/TerrainSections/LandingPad.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/LandingPadSpritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/LandingArrows.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -36,6 +37,29 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 14, 4 )
 
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="LandingPad" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -56,3 +80,10 @@ animation = "Red"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LandingArea"]
 position = Vector2( 0, -18 )
 shape = SubResource( 5 )
+
+[node name="LandingArrows" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 128, 172 )
+frames = SubResource( 9 )
+frame = 1
+playing = true
