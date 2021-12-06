@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gunsplore enemy.png-6419a6bc814eb67e678c31654d74a0ab.stex"
+path="res://.import/DeadEndRight.png-7093d6c231eabff150c120a2275133a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/gunsplore enemy.png"
-dest_files=[ "res://.import/gunsplore enemy.png-6419a6bc814eb67e678c31654d74a0ab.stex" ]
+source_file="res://Sprites/DeadEndRight.png"
+dest_files=[ "res://.import/DeadEndRight.png-7093d6c231eabff150c120a2275133a0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

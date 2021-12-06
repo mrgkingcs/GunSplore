@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Sprites/Ship01.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerRoot.gd" type="Script" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://Scenes/LevelController.gd" type="Script" id=20]
 [ext_resource path="res://Sound/so-long-syndrome.ogg" type="AudioStream" id=21]
 [ext_resource path="res://Sound/fire.wav" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/TerrainSections/Base-Bottom-Left.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/TerrainSections/Base-TopRightExt.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/TerrainSections/Base-DeadEnd-Right.tscn" type="PackedScene" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.5
@@ -48,7 +51,7 @@ __meta__ = {
 
 [node name="InnerBackground" type="TextureRect" parent="."]
 margin_top = -512.0
-margin_right = 768.0
+margin_right = 1024.0
 margin_bottom = 256.0
 texture = ExtResource( 16 )
 stretch_mode = 2
@@ -81,9 +84,6 @@ __meta__ = {
 
 [node name="Base-U" parent="Cave" instance=ExtResource( 5 )]
 
-[node name="Base-U2" parent="Cave" instance=ExtResource( 5 )]
-position = Vector2( 512, 0 )
-
 [node name="Base-Floor" parent="Cave" instance=ExtResource( 8 )]
 position = Vector2( 256, -256 )
 
@@ -108,8 +108,26 @@ position = Vector2( 0, -512 )
 [node name="Base-Ceiling" parent="Cave" instance=ExtResource( 12 )]
 position = Vector2( 256, -512 )
 
-[node name="Base-BottomLeftExt2" parent="Cave" instance=ExtResource( 17 )]
+[node name="Base-Filler" parent="Cave" instance=ExtResource( 17 )]
 position = Vector2( 256, 0 )
+
+[node name="Base-BottomLeftExt3" parent="Cave" instance=ExtResource( 17 )]
+position = Vector2( 768, 256 )
+
+[node name="Base-Bottom-Left-Corner" parent="Cave" instance=ExtResource( 23 )]
+position = Vector2( 512, 0 )
+
+[node name="Base-TopRightExt" parent="Cave" instance=ExtResource( 24 )]
+position = Vector2( 512, 0 )
+
+[node name="Base-Filler2" parent="Cave" instance=ExtResource( 17 )]
+position = Vector2( 768, -256 )
+
+[node name="Base-Filler3" parent="Cave" instance=ExtResource( 17 )]
+position = Vector2( 768, -512 )
+
+[node name="DeadEnd-Right" parent="Cave" instance=ExtResource( 25 )]
+position = Vector2( 768, 0 )
 
 [node name="PlyrBulletTemplate" type="KinematicBody2D" parent="."]
 visible = false
@@ -169,7 +187,7 @@ __meta__ = {
 }
 
 [node name="Enemy2" parent="EnemyContainer" instance=ExtResource( 19 )]
-position = Vector2( 640, 128 )
+position = Vector2( 896, 128 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="EnemyContainer/Enemy2"]
 margin_left = -32.8529
