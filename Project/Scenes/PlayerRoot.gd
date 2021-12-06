@@ -9,6 +9,7 @@ var rightGunTimer = 0
 
 var bulletTemplate = null
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	bulletTemplate = get_node("../PlyrBulletTemplate")
@@ -54,3 +55,6 @@ func fire_right_gun():
 	$FirePlayer.play()
 	
 	apply_impulse(transform.basis_xform($GunRight.position), transform.basis_xform(BASE_GUN_IMPULSE))
+
+func is_player():
+	return true

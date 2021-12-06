@@ -67,7 +67,7 @@ colourFrame = 2
 [node name="FinishLandingPad" parent="Cave" instance=ExtResource( 18 )]
 position = Vector2( 256, -256 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Cave/FinishLandingPad"]
+[node name="Hint" type="RichTextLabel" parent="Cave/FinishLandingPad"]
 margin_top = 140.0
 margin_right = 256.0
 margin_bottom = 190.0
@@ -173,7 +173,7 @@ script = ExtResource( 6 )
 [node name="Enemy" parent="EnemyContainer" instance=ExtResource( 19 )]
 position = Vector2( 384, -384 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="EnemyContainer/Enemy"]
+[node name="Hint" type="RichTextLabel" parent="EnemyContainer/Enemy"]
 margin_left = -28.0
 margin_top = -30.0
 margin_right = 40.0
@@ -186,7 +186,7 @@ __meta__ = {
 [node name="Enemy2" parent="EnemyContainer" instance=ExtResource( 19 )]
 position = Vector2( 896, 128 )
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="EnemyContainer/Enemy2"]
+[node name="Hint" type="RichTextLabel" parent="EnemyContainer/Enemy2"]
 margin_left = -32.8529
 margin_top = -39.1453
 margin_right = 35.1471
