@@ -11,10 +11,14 @@ var bigExplosion = preload("res://Scenes/ExplosionBig.tscn")
 var enemyContainer = null
 var numEnemies = -1
 
+var finishLandingPad = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enemyContainer = get_node("../EnemyContainer")
 	numEnemies = enemyContainer.get_child_count()
+	
+	finishLandingPad = get_node("/root/LevelRoot/Cave/FinishLandingPad")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,7 +26,7 @@ func _process(delta):
 	if numEnemies != newNumEnemies:
 		numEnemies = newNumEnemies
 		if numEnemies == 0:
-			get_node("/root/LevelRoot/Cave/FinishLandingPad").setColourFrame(1)
+			finishLandingPad.unlock()
 
 func spawnSmallExplosion(position):
 	var explosion = smallExplosion.instance()

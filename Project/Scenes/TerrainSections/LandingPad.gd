@@ -22,6 +22,9 @@ func setColourFrame(newFrameIndex):
 	$StaticBody2D/Sprite.animation = colourFrameAnims[colourFrame]
 	
 
+func unlock():
+	setColourFrame(ANIM_AMBER)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
