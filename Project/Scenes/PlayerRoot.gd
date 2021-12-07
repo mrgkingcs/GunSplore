@@ -47,7 +47,7 @@ func _process(delta):
 		
 		if collided == true:
 			var change = (linear_velocity - prevVel).length()
-			var acceleration = change / delta
+			var acceleration = change / 0.04 # delta normalisation doesn't work
 			
 			if acceleration > SAFE_COLLISION_LIMIT:
 				var damageProportion = (acceleration - SAFE_COLLISION_LIMIT) / DEADLY_COLLISION
