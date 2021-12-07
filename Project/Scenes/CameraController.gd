@@ -21,20 +21,21 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var offset = get_viewport_rect().size/2
-	var targetPos = ( 
-					playerNode.global_position
-					+ playerNode.linear_velocity
-					- offset
-				)
-	velocityArray[currPosIndex] = playerNode.linear_velocity*0.75
-	currPosIndex = (currPosIndex+1) % len(velocityArray)
-	
-	var meanVelocity = Vector2(0,0)
-	for entry in velocityArray:
-		meanVelocity += entry
-	meanVelocity *= 1.0/len(velocityArray)
-	
-	var meanTargetPos = meanVelocity + playerNode.global_position - offset
+	if playerNode != null:
+		var offset = get_viewport_rect().size/2
+		var targetPos = ( 
+						playerNode.global_position
+						+ playerNode.linear_velocity
+						- offset
+					)
+		velocityArray[currPosIndex] = playerNode.linear_velocity*0.75
+		currPosIndex = (currPosIndex+1) % len(velocityArray)
+		
+		var meanVelocity = Vector2(0,0)
+		for entry in velocityArray:
+			meanVelocity += entry
+		meanVelocity *= 1.0/len(velocityArray)
+		
+		var meanTargetPos = meanVelocity + playerNode.global_position - offset
 
-	global_position = lerp(global_position, meanTargetPos, 0.5*50*delta)
+		global_position = lerp(global_position, meanTargetPos, 0.5*50*delta)

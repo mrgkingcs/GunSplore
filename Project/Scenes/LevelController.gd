@@ -2,11 +2,12 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 var smallExplosion = preload("res://Scenes/ExplosionSmall.tscn")
 var bigExplosion = preload("res://Scenes/ExplosionBig.tscn")
+
+var playerHullBar = null
+var enemyCounter = null
 
 var enemyContainer = null
 var numEnemies = -1
@@ -18,6 +19,10 @@ func _ready():
 	enemyContainer = get_node("../EnemyContainer")
 	numEnemies = enemyContainer.get_child_count()
 	
+	playerHullBar = get_node("../CanvasLayer/HullBar")
+	enemyCounter = get_node("../CanvasLayer/EnemyCounter")
+	enemyCounter.setNumEnemies(numEnemies)
+	
 	finishLandingPad = get_node("/root/LevelRoot/Cave/FinishLandingPad")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +30,7 @@ func _process(delta):
 	var newNumEnemies = enemyContainer.get_child_count()
 	if numEnemies != newNumEnemies:
 		numEnemies = newNumEnemies
+		enemyCounter.setNumEnemies(numEnemies)
 		if numEnemies == 0:
 			finishLandingPad.unlock()
 
@@ -41,3 +47,8 @@ func spawnBigExplosion(position):
 func doDamage(object, damage):
 	if object.has_method("takeDamage"):
 		object.takeDamage(damage)
+
+func setPlayerHull(hull):
+	playerHullBar.setHull(hull)
+	if(hull <= 0):
+		get_node("../Camera2D").playerNode = null
