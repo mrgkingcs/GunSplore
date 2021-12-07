@@ -174,11 +174,17 @@ script = ExtResource( 6 )
 position = Vector2( 384, -384 )
 
 [node name="Hint" type="RichTextLabel" parent="EnemyContainer/Enemy"]
-margin_left = -28.0
-margin_top = -30.0
-margin_right = 40.0
-margin_bottom = -11.0
-text = "Shoot me!"
+margin_left = -31.4609
+margin_top = -33.3708
+margin_right = 36.5391
+margin_bottom = -10.3708
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[center]Shoot[/center]
+[center]me![/center]"
+text = "Shoot
+me!"
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -187,15 +193,22 @@ __meta__ = {
 position = Vector2( 896, 128 )
 
 [node name="Hint" type="RichTextLabel" parent="EnemyContainer/Enemy2"]
-margin_left = -32.8529
-margin_top = -39.1453
-margin_right = 35.1471
-margin_bottom = -20.1453
-text = "Shoot me!"
+margin_left = -33.0
+margin_top = -43.0
+margin_right = 35.0
+margin_bottom = -16.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[center]Shoot[/center]
+[center]me![/center]"
+text = "Shoot
+me!"
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
+volume_db = -10.0
 autoplay = true
