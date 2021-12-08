@@ -36,6 +36,6 @@ func _process(delta):
 			meanVelocity += entry
 		meanVelocity *= 1.0/len(velocityArray)
 		
-		var meanTargetPos = meanVelocity + playerNode.global_position - offset
+		var meanTargetPos = meanVelocity*0.6 + playerNode.global_position - offset
 
 		global_position = lerp(global_position, meanTargetPos, 0.5*50*delta)
