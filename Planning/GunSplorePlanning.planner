@@ -22,10 +22,10 @@
   <tasks>
     <task id="1" name="First Playable" note="" work="288000" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
       <task id="2" name="Playable Cave Terrain" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="3" name="Launch and Finish Landing Pads" note="" work="86400" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="3" name="Launch and Finish Landing Pads" note="" work="86400" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
         <task id="4" name="Landing Pad Sprites and Scenes" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
         <task id="5" name="Instancing scenes in main level" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
-        <task id="6" name="Adding code logic to finish level" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="6" name="Adding code logic to finish level" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
       <task id="7" name="Enemy to shoot" note="" work="86400" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
         <task id="8" name="Animated sprite for enemy" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
@@ -35,15 +35,16 @@
       <task id="11" name="Energy bar &amp; death" note="" work="86400" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="67" priority="0" type="normal" scheduling="fixed-work">
         <task id="12" name="Logic for collisions to sap health" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
         <task id="13" name="UI Energy graphics" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
-        <task id="14" name="Death logic (just restart level for now)" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="14" name="Death logic (just restart level for now)" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
     </task>
-    <task id="15" name="Final Submission" note="" work="86400" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="16" name="Title Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <task id="17" name="Visualisation" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="15" name="Final Submission" note="" work="115200" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="16" name="Title Screen" note="" work="57600" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="17" name="Visualisation" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="18" name="First Draft Artwork" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
-      <task id="18" name="Game Over Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="19" name="Level Complete Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="19" name="Game Over Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="20" name="Level Complete Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
     </task>
   </tasks>
   <resource-groups/>
