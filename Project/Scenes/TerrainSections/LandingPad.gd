@@ -16,9 +16,12 @@ var colourFrameAnims = [ "Red", "Amber", "Green"]
 var landingBody = null
 var landingTimer = -1
 
+var levelController = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$StaticBody2D/Sprite.animation = colourFrameAnims[colourFrame]
+	levelController = get_node("/root/LevelRoot/LevelController")
 
 func setColourFrame(newFrameIndex):
 	colourFrame = newFrameIndex
@@ -34,13 +37,10 @@ func unlock():
 
 func body_is_landed(body):
 	if body.linear_velocity.length() > 1.5:
-		#print("linear vel", body.linear_velocity.length())
 		return false
 	if body.angular_velocity > 0.1:
-		#print("angular vel", body.angular_velocity)
 		return false
 	if body.transform.get_rotation() > 0.1:
-		#print("rotation", body.transform.get_rotation())
 		return false
 	return true
 
@@ -69,4 +69,4 @@ func _on_LandingArea_body_exited(body):
 		landingBody = null
 
 func handle_landed():
-	pass
+	levelController.handlePlayerLanded()

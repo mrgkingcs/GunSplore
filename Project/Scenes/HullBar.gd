@@ -17,3 +17,5 @@ func _ready():
 
 func setHull(fraction):
 	$BarContainer/BarFill.anchor_right = fraction
+	if fraction <= 0:
+		$BarContainer/BarFill.visible = false

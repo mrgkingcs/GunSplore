@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Sprites/Ship01.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PlayerRoot.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Scenes/HullBar.gd" type="Script" id=29]
 [ext_resource path="res://Sound/Collision.wav" type="AudioStream" id=30]
 [ext_resource path="res://Scenes/EnemyCounter.gd" type="Script" id=31]
+[ext_resource path="res://Scenes/Fader.gd" type="Script" id=32]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.5
@@ -68,7 +69,21 @@ __meta__ = {
 [node name="Cave" type="Node2D" parent="."]
 
 [node name="StartLandingPad" parent="Cave" instance=ExtResource( 18 )]
-colourFrame = 2
+script = null
+
+[node name="Label" type="Label" parent="Cave/StartLandingPad"]
+margin_left = 87.4848
+margin_top = 120.937
+margin_right = 167.485
+margin_bottom = 150.937
+text = "Z,X or 
+left/right
+arrow keys"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FinishLandingPad" parent="Cave" instance=ExtResource( 18 )]
 position = Vector2( 256, -256 )
@@ -240,9 +255,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/HullBar"]
-margin_top = 1.0
+margin_top = 4.0
 margin_right = 26.0
-margin_bottom = 15.0
+margin_bottom = 12.0
 text = "Hull"
 align = 2
 valign = 1
@@ -293,9 +308,9 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="CanvasLayer/EnemyCounter"]
-margin_top = 2.0
+margin_top = 5.0
 margin_right = 8.0
-margin_bottom = 16.0
+margin_bottom = 13.0
 text = "0"
 align = 2
 valign = 1
@@ -305,5 +320,15 @@ margin_left = 12.0
 margin_right = 28.0
 margin_bottom = 19.0
 texture = ExtResource( 28 )
+
+[node name="Fader" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="PlayerRoot" to="PlayerRoot" method="_on_PlayerRoot_body_entered"]

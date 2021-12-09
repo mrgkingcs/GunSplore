@@ -73,7 +73,7 @@ polygon = PoolVector2Array( -32, 32, -32, 0, -24, -12, -24, -14, 24, -14, 24, -1
 
 [node name="Sprite" type="AnimatedSprite" parent="StaticBody2D"]
 frames = SubResource( 4 )
-animation = "Red"
+animation = "Green"
 
 [node name="LandingArea" type="Area2D" parent="StaticBody2D"]
 
@@ -85,7 +85,6 @@ shape = SubResource( 5 )
 visible = false
 position = Vector2( 128, 172 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [connection signal="body_entered" from="StaticBody2D/LandingArea" to="." method="_on_LandingArea_body_entered"]

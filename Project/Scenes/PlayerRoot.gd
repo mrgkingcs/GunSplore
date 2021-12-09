@@ -18,6 +18,8 @@ var prevVel = Vector2()
 var collided = false
 var currHull = 1
 
+var disabled = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	levelController = get_node("/root/LevelRoot/LevelController")
@@ -27,7 +29,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if currHull > 0:
+	if currHull > 0 and not disabled:
 		if leftGunTimer > delta:
 			leftGunTimer -= delta
 		else:
@@ -93,3 +95,6 @@ func takeDamage(amount):
 		hide()
 		
 	levelController.setPlayerHull(currHull)
+
+func disable():
+	disabled = true
