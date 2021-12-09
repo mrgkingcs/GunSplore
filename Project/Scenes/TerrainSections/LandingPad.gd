@@ -36,7 +36,7 @@ func unlock():
 		hintNode.visible = false
 
 func body_is_landed(body):
-	if body.linear_velocity.length() > 1.5:
+	if body.linear_velocity.length() > 2:
 		return false
 	if body.angular_velocity > 0.1:
 		return false
@@ -48,14 +48,16 @@ func body_is_landed(body):
 func _process(delta):
 	if colourFrame != ANIM_RED and landingBody != null:
 		if body_is_landed(landingBody):
+			setColourFrame(ANIM_GREEN)
 			if landingTimer < 0:
-				landingTimer = 1
+				landingTimer = 0.5
 			else:
 				landingTimer -= delta
 				if landingTimer < 0:
 					landingBody = null
 					handle_landed()
 		else:
+			setColourFrame(ANIM_AMBER)
 			landingTimer = -1
 
 

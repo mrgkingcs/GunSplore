@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/first-story.ogg-6cc85ddf3a44612ee3da4fa3d51d7bed.oggstr"
+
+[deps]
+
+source_file="res://Sound/first-story.ogg"
+dest_files=[ "res://.import/first-story.ogg-6cc85ddf3a44612ee3da4fa3d51d7bed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

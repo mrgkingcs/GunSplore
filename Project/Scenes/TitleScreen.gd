@@ -27,7 +27,7 @@ func _process(delta):
 			if flashTimer > delta:
 				flashTimer -= delta
 			else:
-				$Label.visible = !$Label.visible
+				$StartPrompt.visible = !$StartPrompt.visible
 				flashTimer = FLASH_DURATION
 
 			if Input.is_key_pressed(KEY_SPACE):

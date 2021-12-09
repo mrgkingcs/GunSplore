@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/TitleScreen.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/TitleScreen.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/Fader.gd" type="Script" id=4]
+[ext_resource path="res://Sound/first-story.ogg" type="AudioStream" id=5]
 
 [node name="TitleScreen" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -17,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="StartPrompt" type="Label" parent="."]
 anchor_right = 1.0
 margin_top = 420.0
 margin_bottom = 460.0
@@ -25,6 +26,19 @@ custom_fonts/font = ExtResource( 3 )
 text = "PRESS SPACE"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Contains music ©2021 Joshua McLean (https://joshua-mclean.itch.io) 
+Licensed under Creative Commons Attribution 4.0 International"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,3 +51,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
