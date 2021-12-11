@@ -25,7 +25,7 @@ var state
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	enemyContainer = get_node("../EnemyContainer")
+	enemyContainer = get_node("../LevelData/EnemyContainer")
 	numEnemies = enemyContainer.get_child_count()
 	
 	player = get_node("../PlayerRoot")
@@ -36,7 +36,7 @@ func _ready():
 	fader = get_node("../CanvasLayer/Fader")
 	fader.fade_in(FADE_DURATION)
 	
-	finishLandingPad = get_node("/root/LevelRoot/Cave/FinishLandingPad")
+	finishLandingPad = get_node("/root/LevelRoot/LevelData/Cave/FinishLandingPad")
 	
 	state = STATE_PLAYING
 
