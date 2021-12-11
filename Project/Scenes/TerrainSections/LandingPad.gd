@@ -36,7 +36,7 @@ func unlock():
 		hintNode.visible = false
 
 func body_is_landed(body):
-	if body.linear_velocity.length() > 2:
+	if body.linear_velocity.length() > 4:
 		return false
 	if body.angular_velocity > 0.1:
 		return false

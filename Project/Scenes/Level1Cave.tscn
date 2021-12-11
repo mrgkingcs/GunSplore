@@ -1,19 +1,14 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/CaveBackground.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/TerrainSections/Base-LeftWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TerrainSections/LandingPad.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TerrainSections/Base-Floor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/TerrainSections/Base-BottomRightExt.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/TerrainSections/Base-BottomLeftExt.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/TerrainSections/Base-Bottom-Right.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/TerrainSections/Base-Top-Right.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/TerrainSections/Base-Top-Left.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/TerrainSections/Base-Filler.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/TerrainSections/Base-DeadEnd-Right.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/TerrainSections/Base-Bottom-Left.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/TerrainSections/Base-TopRightExt.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/TerrainSections/Base-Ceiling.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/TerrainSections/Base-U.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/TerrainSections/Base-RightWall.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=16]
 
@@ -23,7 +18,7 @@
 
 [node name="InnerBackground" type="TextureRect" parent="Cave"]
 margin_top = -512.0
-margin_right = 1024.0
+margin_right = 768.0
 margin_bottom = 256.0
 texture = ExtResource( 1 )
 stretch_mode = 2
@@ -32,6 +27,7 @@ __meta__ = {
 }
 
 [node name="StartLandingPad" parent="Cave" instance=ExtResource( 3 )]
+script = null
 
 [node name="Label" type="Label" parent="Cave/StartLandingPad"]
 margin_left = 87.4848
@@ -48,7 +44,7 @@ __meta__ = {
 }
 
 [node name="FinishLandingPad" parent="Cave" instance=ExtResource( 3 )]
-position = Vector2( 256, -256 )
+position = Vector2( 512, 0 )
 
 [node name="Hint" type="RichTextLabel" parent="Cave/FinishLandingPad"]
 margin_left = 0.8909
@@ -67,10 +63,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Base-U" parent="Cave" instance=ExtResource( 14 )]
-
 [node name="Base-Floor" parent="Cave" instance=ExtResource( 4 )]
-position = Vector2( 256, -256 )
+position = Vector2( 256, 0 )
 
 [node name="Base-Top-Right-Corner" parent="Cave" instance=ExtResource( 7 )]
 position = Vector2( 512, -512 )
@@ -78,68 +72,30 @@ position = Vector2( 512, -512 )
 [node name="Base-LeftWall" parent="Cave" instance=ExtResource( 2 )]
 position = Vector2( 0, -256 )
 
-[node name="Base-BottomLeftExt" parent="Cave" instance=ExtResource( 6 )]
-position = Vector2( 512, -256 )
-
-[node name="Base-BottomRightExt" parent="Cave" instance=ExtResource( 5 )]
-position = Vector2( 0, -256 )
-
-[node name="Base-RightWall" parent="Cave" instance=ExtResource( 15 )]
-position = Vector2( 512, -256 )
-
 [node name="Base-Top-Left-Corner" parent="Cave" instance=ExtResource( 8 )]
 position = Vector2( 0, -512 )
 
 [node name="Base-Ceiling" parent="Cave" instance=ExtResource( 13 )]
 position = Vector2( 256, -512 )
 
-[node name="Base-Filler" parent="Cave" instance=ExtResource( 9 )]
-position = Vector2( 256, 0 )
+[node name="Base-Top-Right-Corner2" parent="Cave" instance=ExtResource( 6 )]
+position = Vector2( 512, 0 )
 
 [node name="Base-Bottom-Left-Corner" parent="Cave" instance=ExtResource( 11 )]
-position = Vector2( 512, 0 )
 
-[node name="Base-TopRightExt" parent="Cave" instance=ExtResource( 12 )]
-position = Vector2( 512, 0 )
-
-[node name="Base-Filler2" parent="Cave" instance=ExtResource( 9 )]
-position = Vector2( 768, -256 )
-
-[node name="Base-Filler3" parent="Cave" instance=ExtResource( 9 )]
-position = Vector2( 768, -512 )
-
-[node name="DeadEnd-Right" parent="Cave" instance=ExtResource( 10 )]
-position = Vector2( 768, 0 )
+[node name="Base-RightWall" parent="Cave" instance=ExtResource( 15 )]
+position = Vector2( 512, -256 )
 
 [node name="EnemyContainer" type="Node2D" parent="."]
 
 [node name="Enemy" parent="EnemyContainer" instance=ExtResource( 16 )]
-position = Vector2( 384, -384 )
+position = Vector2( 384, -320 )
 
 [node name="Hint" type="RichTextLabel" parent="EnemyContainer/Enemy"]
 margin_left = -31.8909
 margin_top = -46.818
 margin_right = 36.1091
 margin_bottom = -16.818
-rect_clip_content = false
-bbcode_enabled = true
-bbcode_text = "[center]Shoot[/center]
-[center]me![/center]"
-text = "Shoot
-me!"
-fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Enemy2" parent="EnemyContainer" instance=ExtResource( 16 )]
-position = Vector2( 896, 128 )
-
-[node name="Hint" type="RichTextLabel" parent="EnemyContainer/Enemy2"]
-margin_left = -33.0
-margin_top = -43.0
-margin_right = 35.0
-margin_bottom = -16.0
 rect_clip_content = false
 bbcode_enabled = true
 bbcode_text = "[center]Shoot[/center]

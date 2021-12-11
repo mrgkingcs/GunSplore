@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-HorzCorridor.png" type="Texture" id=1]
+
+[node name="Base-Floor" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 208 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 17.169, 6.21547, 13.9979, 14.1425, 13.2001, 27.2385, 23.5182, 43.9062, 18.3591, 53.0338, 24.3119, 63.3519, 19.5497, 66.9235, 8.83473, 91.9251, 3.67569, 99.8621, 11.2158, 102.243, 7.64418, 114.546, 17.5654, 126.054, 7.64418, 141.531, 20.7403, 150.147, 12.8741, 159.137, 22.2386, 174.494, 6.13177, 187.23, 8.37923, 196.969, 21.4894, 215.323, 11.3758, 225.062, 11.3758, 233.246, 18.4928, 238.865, 13.9979, 248.978, 23.7369, 256, 20.366, 255.721, 48, 0, 48.834 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 29.659, 0, 0, 256, 0, 256, 27.661, 248.068, 30.658, 237.579, 25.4139, 222.347, 41.3958, 214.356, 36.4015, 207.613, 41.8953, 194.129, 33.6546, 191.881, 23.6659, 175.899, 14.676, 164.412, 28.1608, 163.663, 33.9043, 156.671, 34.9032, 138.441, 20.6693, 131.2, 25.1642, 123.458, 21.6681, 119.213, 27.1619, 118.464, 33.4049, 107.476, 38.8987, 92.4934, 36.4015, 82.5047, 28.1608, 66.7724, 36.6512, 51.2899, 28.6602, 39.3035, 30.658, 21.0741, 24.415, 14.5814, 29.4094, 6.84016, 26.4128 )

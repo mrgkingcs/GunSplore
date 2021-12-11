@@ -38,13 +38,27 @@
         <task id="14" name="Death logic (just restart level for now)" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
     </task>
-    <task id="15" name="Final Submission" note="" work="115200" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="15" name="Final Submission" note="" work="403200" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <task id="16" name="Title Screen" note="" work="57600" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <task id="17" name="Visualisation" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
         <task id="18" name="First Draft Artwork" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
       <task id="19" name="Game Over Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="20" name="Level Complete Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="20" name="Game Complete Screen" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="21" name="Multiple Level Scenes" note="" work="144000" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="22" name="Twisty" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="23" name="Cubbies" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="24" name="The Loop" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="25" name="Chimneys" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="26" name="The Climb" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="27" name="Game Progression" note="" work="144000" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="28" name="Start at level 1, then move through" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="29" name="Loss of life = restart current level" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="30" name="Self Destruct Button in case of getting stuck" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="31" name="Three lives --&gt; game over when all done" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="32" name="Player Lives UI" note="" work="28800" start="20211113T000000Z" end="20211115T170000Z" work-start="20211115T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
     </task>
   </tasks>
   <resource-groups/>
