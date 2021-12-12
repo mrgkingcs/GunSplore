@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Base-Crossroads.png" type="Texture" id=1]
+
+[node name="Base-BottomLeftExt" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BottomLeftCorner" type="StaticBody2D" parent="."]
+position = Vector2( 0, 222 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomLeftCorner"]
+polygon = PoolVector2Array( 28.666, 34, 26.4966, 29, 30.3343, 24.9955, 27.3309, 22.6595, 27.3309, 8.81055, 21.8481, 7.36369, 19.6499, 2.54646, 7.58344, 1.37723, 0.0535917, 7.87816, 0, 34 )
+
+[node name="BottomRightCorner" type="StaticBody2D" parent="."]
+position = Vector2( 220, 222 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomRightCorner"]
+polygon = PoolVector2Array( 35.9945, 8.36926, 36, 34, 1.233, 34, 3.84714, 23.998, 14.6927, 14.6541, 14.359, 2.58496, 18.1411, 1.08327, 27.04, 10.7052, 32.5462, 10.4828, 33.6586, 8.4805 )
+
+[node name="TopLeftCorner" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopLeftCorner"]
+polygon = PoolVector2Array( -0.0115442, 28.387, 0, 0, 28.284, 0, 27.8629, 6.49902, 19.3509, 22.9618, 12.6162, 28.4806, 5.97492, 24.5987 )
+
+[node name="TopRightCorner" type="StaticBody2D" parent="."]
+position = Vector2( 215, 0 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopRightCorner"]
+polygon = PoolVector2Array( 7.131, 0, 41, 0, 41, 26.915, 31.4108, 27.0037, 25.6279, 23.8694, 16.5342, 28.637, 1.92245, 15.9235, 1.26028, 6.43244 )

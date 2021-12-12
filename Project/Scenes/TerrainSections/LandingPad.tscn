@@ -85,6 +85,7 @@ shape = SubResource( 5 )
 visible = false
 position = Vector2( 128, 172 )
 frames = SubResource( 9 )
+frame = 2
 playing = true
 
 [connection signal="body_entered" from="StaticBody2D/LandingArea" to="." method="_on_LandingArea_body_entered"]
