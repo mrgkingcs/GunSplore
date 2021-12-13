@@ -1,7 +1,6 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
 const FADE_DURATION = 1
 
 var smallExplosion = preload("res://Scenes/ExplosionSmall.tscn")
@@ -13,6 +12,7 @@ var playerHullBar = null
 var enemyCounter = null
 var lifeCounter = null
 var fader = null
+var levelNameNode = null
 
 var enemyContainer = null
 var numEnemies = -1
@@ -22,7 +22,10 @@ var finishLandingPad = null
 const STATE_PLAYING = 0
 const STATE_WIN = 1
 const STATE_DEAD = 2
+const STATE_INTRO = 3
 var state
+
+export var levelName = "Level name"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,13 +42,21 @@ func _ready():
 	fader = get_node("../CanvasLayer/Fader")
 	fader.fade_in(FADE_DURATION)
 	
+	levelNameNode = get_node("../CanvasLayer/LevelName")
+	levelNameNode.text = levelName
+	
 	finishLandingPad = get_node("/root/LevelRoot/LevelData/Cave/FinishLandingPad")
 	
-	state = STATE_PLAYING
+	state = STATE_INTRO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	match state:
+		STATE_INTRO:
+			if fader.is_finished():
+				levelNameNode.visible = false
+				state = STATE_PLAYING
+				
 		STATE_PLAYING:
 			var newNumEnemies = enemyContainer.get_child_count()
 			if numEnemies != newNumEnemies:

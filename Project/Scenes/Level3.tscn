@@ -5,6 +5,9 @@
 
 [node name="LevelRoot" instance=ExtResource( 2 )]
 
+[node name="LevelController" parent="." index="0"]
+levelName = "Level 3 - Getting Cross?"
+
 [node name="OuterBackground" parent="." index="1"]
 margin_left = -512.0
 margin_top = -1664.0

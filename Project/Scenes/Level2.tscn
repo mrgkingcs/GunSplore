@@ -5,4 +5,7 @@
 
 [node name="LevelRoot" instance=ExtResource( 1 )]
 
+[node name="LevelController" parent="." index="0"]
+levelName = "Level 2 - Ups and Downs"
+
 [node name="LevelData" parent="." index="2" instance=ExtResource( 2 )]
