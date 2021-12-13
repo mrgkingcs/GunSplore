@@ -11,6 +11,7 @@ var player = null
 
 var playerHullBar = null
 var enemyCounter = null
+var lifeCounter = null
 var fader = null
 
 var enemyContainer = null
@@ -33,6 +34,8 @@ func _ready():
 	playerHullBar = get_node("../CanvasLayer/HullBar")
 	enemyCounter = get_node("../CanvasLayer/EnemyCounter")
 	enemyCounter.setNumEnemies(numEnemies)
+	lifeCounter = get_node("../CanvasLayer/LifeCounter")
+	lifeCounter.setNumLives(GameController.getNumLives())
 	fader = get_node("../CanvasLayer/Fader")
 	fader.fade_in(FADE_DURATION)
 	
@@ -59,7 +62,7 @@ func _process(delta):
 		STATE_DEAD:
 			if fader.is_finished():
 				#get_tree().change_scene_to(load("res://Scenes/TitleScreen.tscn"))
-				GameController.gameOver()
+				GameController.playerDied()
 
 func spawnSmallExplosion(position):
 	var explosion = smallExplosion.instance()
