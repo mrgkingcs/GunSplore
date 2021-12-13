@@ -84,6 +84,27 @@ stream = ExtResource( 22 )
 [node name="CollisionPlayer" type="AudioStreamPlayer2D" parent="PlayerRoot"]
 stream = ExtResource( 30 )
 
+[node name="Control" type="Control" parent="PlayerRoot"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DestructOption" type="Label" parent="PlayerRoot/Control"]
+visible = false
+margin_left = -49.7117
+margin_top = -44.0
+margin_right = 49.2883
+margin_bottom = -21.0
+text = "SPACE to
+self-destruct"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true

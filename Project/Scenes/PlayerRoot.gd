@@ -20,15 +20,34 @@ var currHull = 1
 
 var disabled = false
 
+var destructOption = null
+var destructOptionTimer = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	levelController = get_node("/root/LevelRoot/LevelController")
 	bulletTemplate = get_node("../PlyrBulletTemplate")
+	destructOption = $Control/DestructOption
 	inertia = BASE_MOMENT_OF_INERTIA
 	prevVel = linear_velocity
+	destructOptionTimer = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# would probably be better to make this vector-add movement
+	# over the last 60-odd frames?
+	if linear_velocity.length() < 50:
+		destructOptionTimer += delta
+		if destructOptionTimer > 6:
+			destructOption.visible = true
+	else:
+		destructOption.visible = false
+		destructOptionTimer = 0
+	
+	if destructOption.visible and Input.is_key_pressed(KEY_SPACE):
+		takeDamage(1)
+		destructOption.visible = false
+		
 	if currHull > 0 and not disabled:
 		if leftGunTimer > delta:
 			leftGunTimer -= delta
@@ -60,6 +79,8 @@ func _process(delta):
 			
 		prevVel = linear_velocity
 		
+func _physics_process(delta):
+	$Control.set_rotation(-transform.get_rotation())
 
 func fire_left_gun():
 	var bulletInstance = bulletTemplate.duplicate()
@@ -88,13 +109,14 @@ func _on_PlayerRoot_body_entered(body):
 	collided = true
 	
 func takeDamage(amount):
-	currHull -= amount
-	if currHull < 0:
-		currHull = 0
-		levelController.spawnBigExplosion(global_position)
-		hide()
-		
-	levelController.setPlayerHull(currHull)
+	if currHull > 0:
+		currHull -= amount
+		if currHull < 0:
+			currHull = 0
+			levelController.spawnBigExplosion(global_position)
+			hide()
+			
+		levelController.setPlayerHull(currHull)
 
 func disable():
 	disabled = true
