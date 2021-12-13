@@ -5,4 +5,10 @@
 
 [node name="LevelRoot" instance=ExtResource( 2 )]
 
+[node name="OuterBackground" parent="." index="1"]
+margin_left = -1152.0
+margin_top = -2176.0
+margin_right = 2944.0
+margin_bottom = 1920.0
+
 [node name="LevelData" parent="." index="2" instance=ExtResource( 1 )]

@@ -36,4 +36,5 @@ func _process(delta):
 		
 		STATE_OUTRO:
 			if $Fader.is_finished():
-				get_tree().change_scene_to(load('res://Scenes/Level1.tscn'))
+				#get_tree().change_scene_to(load('res://Scenes/Level1.tscn'))
+				GameController.startGame()

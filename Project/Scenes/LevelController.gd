@@ -53,11 +53,13 @@ func _process(delta):
 
 		STATE_WIN:
 			if fader.is_finished():
-				get_tree().change_scene_to(load("res://Scenes/TitleScreen.tscn"))
+				#get_tree().change_scene_to(load("res://Scenes/TitleScreen.tscn"))
+				GameController.levelComplete()
 
 		STATE_DEAD:
 			if fader.is_finished():
-				get_tree().change_scene_to(load("res://Scenes/TitleScreen.tscn"))
+				#get_tree().change_scene_to(load("res://Scenes/TitleScreen.tscn"))
+				GameController.gameOver()
 
 func spawnSmallExplosion(position):
 	var explosion = smallExplosion.instance()

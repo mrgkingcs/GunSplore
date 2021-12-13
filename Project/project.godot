@@ -18,6 +18,10 @@ config/name="Gunsplore"
 run/main_scene="res://Scenes/TitleScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameController="*res://Scenes/GameController.gd"
+
 [display]
 
 window/size/width=640
